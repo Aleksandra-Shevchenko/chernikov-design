@@ -1,0 +1,4 @@
+.card {
+  height: calc(100vh - 6.25rem);
+  @apply overflow-hidden bg-cover flex justify-center items-center bg-center;
+}
