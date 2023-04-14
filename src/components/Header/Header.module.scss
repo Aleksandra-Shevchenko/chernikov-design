@@ -1,0 +1,19 @@
+.container {
+  @apply bg-general flex items-center justify-between text-white sections-frame;
+}
+
+.logo {
+  @apply text-white text-lg font-steppe font-extrabold;
+}
+
+.contactsBox {
+  @apply flex space-x-5 items-center;
+}
+
+.tel {
+  @apply font-steppe text-sm;
+}
+
+.linkBox {
+  @apply flex justify-center items-center shrink-0;
+}
