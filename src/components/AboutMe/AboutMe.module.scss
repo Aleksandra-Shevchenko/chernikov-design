@@ -1,0 +1,29 @@
+.container {
+  @apply bg-grey;
+}
+
+.content {
+  @apply grid grid-cols-[max-content_1fr] gap-0 auto-rows-[minmax(0,_500px)];
+}
+
+.textContainer {
+  @apply subpixel-antialiased;
+  @apply flex justify-between flex-col;
+  @apply py-24 px-16 pr-20;
+}
+
+.title {
+  @apply text-justify font-bold text-lg leading-none text-white;
+}
+
+.subtitle {
+  @apply max-w-[27.125rem] text-justify text-sm text-dark leading-tight self-end mt-9;
+}
+
+.avatarContainer {
+  @apply max-w-[30.125rem] overflow-hidden h-max;
+}
+
+.avatar {
+  @apply w-full h-full object-cover object-top;
+}
