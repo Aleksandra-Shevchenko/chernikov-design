@@ -1,10 +1,5 @@
 module.exports = {
-  extends: [
-    'airbnb',
-    'plugin:@typescript-eslint/recommended',
-    'prettier',
-    'next',
-  ],
+  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', 'prettier'],
   parser: '@typescript-eslint/parser',
   root: true,
   env: {
