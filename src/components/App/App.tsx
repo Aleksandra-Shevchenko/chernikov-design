@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import { Routes, Route, Router } from 'react-router-dom';
 import './App.css';
 import { Header } from '../Header/Header';
@@ -6,6 +6,7 @@ import { ProjectList } from '../ProjectList/ProjectList';
 import { AboutMe } from '../AboutMe/AboutMe';
 import { Services } from '../Services/Services';
 import { Prices } from '../Prices/Prices';
+import { Footer } from '../Footer/Footer';
 
 // const { XMLParser } = require('fast-xml-parser');
 
@@ -34,9 +35,9 @@ const mockList = [
 function App() {
   // const [projectList, setProjectList] = useState();
   // const [projectContent, setProjectContent] = useState();
-  const [projectDecription] = useState({
-    name: '',
-  });
+  // const [projectDecription] = useState({
+  //   name: '',
+  // });
 
   // &delimiter=/
   // const b = () => {
@@ -97,8 +98,9 @@ function App() {
         <AboutMe />
         <Services />
         <Prices />
+        <Footer />
 
-        <p>
+        {/* <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
@@ -114,7 +116,7 @@ function App() {
           className="w-48"
           alt="test"
         />
-        <p className="text-black">{projectDecription?.name}</p>
+        <p className="text-black">{projectDecription?.name}</p> */}
       </div>
     </div>
   );

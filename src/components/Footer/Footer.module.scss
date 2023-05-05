@@ -1,0 +1,31 @@
+.firstSection {
+  @apply bg-general py-10 flex flex-col justify-center items-center border-y-2 border-dark;
+
+  .title {
+    @apply text-light text-sm font-bold mb-5;
+  }
+
+  .iconsGroup {
+    @apply text-light flex space-x-5;
+  }
+}
+
+.secondSection {
+  @apply bg-dark flex flex-col px-9 py-5;
+
+  .list {
+    @apply flex flex-col self-end items-end space-y-1 mb-24;
+  }
+
+  .bottomContainer {
+    @apply flex justify-between items-center;
+  }
+
+  .navList {
+    @apply flex space-x-5;
+  }
+}
+
+.text {
+  @apply text-sm;
+}
