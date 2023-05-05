@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import './App.css';
 import { Header } from '../Header/Header';
 import { ProjectList } from '../ProjectList/ProjectList';
+import { AboutMe } from '../AboutMe/AboutMe';
+import { Services } from '../Services/Services';
+import { Prices } from '../Prices/Prices';
 
 // const { XMLParser } = require('fast-xml-parser');
 
@@ -91,6 +94,9 @@ function App() {
       <div className="max-w-7xl w-full">
         <Header />
         <ProjectList projects={mockList} />
+        <AboutMe />
+        <Services />
+        <Prices />
 
         <p>
           Edit <code>src/App.tsx</code> and save to reload.

@@ -4,14 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { OWNER } from '../../utils/constants';
 
 import styles from './Header.module.scss';
+import { Logo } from '../Logo/Logo';
 
 export const Header = () => {
   console.log('header');
   return (
-    <div className={styles.container}>
-      <a href="/" className={styles.logo}>
-        {OWNER.logo}
-      </a>
+    <header className={styles.container}>
+      <Logo />
       <div className={styles.contactsBox}>
         <p className={styles.tel}>{OWNER.phoneNumber}</p>
         <a
@@ -34,6 +33,6 @@ export const Header = () => {
           <FontAwesomeIcon icon={['fab', 'whatsapp']} className="text-lg" />
         </a>
       </div>
-    </div>
+    </header>
   );
 };

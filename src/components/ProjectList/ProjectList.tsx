@@ -7,7 +7,7 @@ export const ProjectList = ({ projects }: { projects: any }) => {
   console.log('projects', projects);
 
   return (
-    <nav className="min-h-full">
+    <nav className="min-h-max">
       <ul className=" grid grid-cols-1 gap-0 sm:grid-cols-2 h-full">
         {projects.map((project: any) => (
           <li
