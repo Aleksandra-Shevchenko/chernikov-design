@@ -3,25 +3,29 @@
 }
 
 .content {
-  @apply grid grid-cols-[max-content_1fr] gap-0 auto-rows-[minmax(0,_500px)];
+  @apply grid grid-cols-[1fr] sm:grid-cols-[max-content_1fr] gap-0;
+  @apply xs:auto-rows-[minmax(0,_326px)] md:auto-rows-[minmax(0,_390px)] lg:auto-rows-[minmax(0,_500px)];
 }
 
 .textContainer {
   @apply subpixel-antialiased;
   @apply flex justify-between flex-col;
-  @apply py-24 px-16 pr-20;
+  @apply py-6 xs:py-8 px-6 md:py-12 md:px-10 lg:py-20 lg:px-12 xl:py-24 xl:px-16 xl:pr-20;
 }
 
 .title {
-  @apply text-justify font-bold text-lg leading-none text-white;
+  @apply text-justify font-bold text-[1.125rem] xs:text-sm sm:text-[1.125rem] md:text-sm lg:text-lg leading-tight md:leading-none text-light;
+  @apply px-0 xs:px-8 sm:px-0;
 }
 
 .subtitle {
-  @apply max-w-[27.125rem] text-justify text-sm text-dark leading-tight self-end mt-9;
+  @apply text-justify text-xs sm:text-xxs md:text-xs lg:text-sm text-dark leading-none xs:leading-tight self-end;
+  @apply max-w-[18.7rem] xs:max-w-[28rem] sm:max-w-[18rem] lg:max-w-[27.125rem] px-0 xs:px-8 sm:px-0 mt-8 sm:mt-9;
 }
 
 .avatarContainer {
-  @apply max-w-[30.125rem] overflow-hidden h-max;
+  @apply sm:max-w-[18rem] md:max-w-[23rem] lg:max-w-[30.125rem] xs:overflow-hidden;
+  @apply h-80 sm:h-max px-0 xs:px-6 sm:p-0;
 }
 
 .avatar {

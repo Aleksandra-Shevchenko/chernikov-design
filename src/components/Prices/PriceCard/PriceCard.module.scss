@@ -3,18 +3,22 @@
 }
 
 .titleBox {
-  @apply flex justify-between items-center mb-9;
+  @apply flex justify-between items-end xs:items-center mb-7 lg:mb-9 flex-col xs:flex-row;
 }
 
 .title {
-  @apply font-bold text-sm text-light;
+  @apply font-bold text-sm text-light xs:shrink-0 self-start mr-4 sm:mr-8;
   @apply subpixel-antialiased;
 }
 
 .price {
-  @apply text-lg text-light;
+  @apply text-xs xs:text-sm lg:text-lg text-light text-right leading-none flex-1;
 }
 
 .text {
-  @apply text-light text-xs;
+  @apply text-light text-xs sm:text-xxs md:text-xs;
+}
+
+.list {
+  @apply list-disc list-inside;
 }

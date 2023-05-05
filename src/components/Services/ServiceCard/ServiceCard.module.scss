@@ -1,19 +1,20 @@
 .container {
-  @apply px-7 py-6 bg-light relative min-h-[18.75rem];
+  @apply px-6 md:px-7 py-6 bg-light relative min-h-[12rem] md:min-h-[15rem] lg:min-h-[18.75rem];
 }
 
 .title {
-  @apply text-xlg text-dark font-bold leading-none mb-9;
+  @apply text-sm md:text-lg lg:text-xlg text-dark font-bold leading-none mb-6 md:mb-9;
 }
 
 .text {
-  @apply text-sm text-dark leading-tight;
+  @apply text-xs sm:text-xxs md:text-xs lg:text-sm text-dark leading-tight;
 }
 
 .numberContainer {
-  @apply absolute top-6 right-0 flex justify-center items-center px-7 overflow-hidden;
+  @apply absolute top-6 right-0 flex justify-center items-center overflow-hidden;
+  @apply px-4 xs:px-6 sm:px-4 md:px-7;
 }
 
 .number {
-  @apply text-[19rem] text-grey opacity-30 leading-none;
+  @apply text-[8rem] xs:text-[10rem] sm:text-[9rem] md:text-[14rem] lg:text-[19rem] text-grey opacity-30 leading-none;
 }

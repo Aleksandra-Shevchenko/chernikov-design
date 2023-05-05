@@ -7,22 +7,18 @@ import styles from './Header.module.scss';
 import { Logo } from '../Logo/Logo';
 import { MessengerIcon } from '../Icons/MessengerIcon';
 
-export const Header = () => {
-  console.log('header');
-
-  return (
-    <header className={styles.container}>
-      <Logo />
-      <div className={styles.contactsBox}>
-        <a
-          className={styles.tel}
-          href={`tel:${fixPhoneNumber(OWNER.phoneNumber)}`}
-        >
-          {OWNER.phoneNumber}
-        </a>
-        <MessengerIcon type="telegram" />
-        <MessengerIcon type="whatsapp" />
-      </div>
-    </header>
-  );
-};
+export const Header = () => (
+  <header className={styles.container}>
+    <Logo className=" text-xs xs:text-sm md:text-lg" />
+    <div className={styles.contactsBox}>
+      <a
+        className={styles.tel}
+        href={`tel:${fixPhoneNumber(OWNER.phoneNumber)}`}
+      >
+        {OWNER.phoneNumber}
+      </a>
+      <MessengerIcon type="telegram" className="text-sm xs:text-lg" />
+      <MessengerIcon type="whatsapp" className="text-sm xs:text-lg" />
+    </div>
+  </header>
+);

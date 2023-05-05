@@ -3,6 +3,6 @@
 }
 
 .content {
-  @apply grid grid-cols-2 gap-[0.063rem];
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-[0.063rem];
   grid-auto-rows: 1fr;
 }

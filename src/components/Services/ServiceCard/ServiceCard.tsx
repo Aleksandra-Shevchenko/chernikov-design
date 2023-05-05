@@ -13,7 +13,7 @@ export const ServiceCard = ({
   number: number;
 }) => (
   <li className={styles.container}>
-    <div className="max-w-[90%]">
+    <div className="max-w-[86%] sm:max-w-[90%]">
       <h2 className={styles.title}>{service.title}</h2>
       <ul>
         {service.list.map((item) => (

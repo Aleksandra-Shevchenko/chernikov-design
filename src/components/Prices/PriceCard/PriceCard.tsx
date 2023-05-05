@@ -16,7 +16,7 @@ export const PriceCard = ({
       <h3 className={styles.title}>{price.title}</h3>
       <p className={styles.price}>{price.price}</p>
     </div>
-    <ul className="list-disc list-insid">
+    <ul className={styles.list}>
       {price.list.map((item) => (
         <li className={styles.text} key={item}>{`${item}`}</li>
       ))}
