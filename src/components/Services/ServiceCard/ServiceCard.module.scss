@@ -1,0 +1,19 @@
+.container {
+  @apply px-7 py-6 bg-light relative min-h-[18.75rem];
+}
+
+.title {
+  @apply text-xlg text-dark font-bold leading-none mb-9;
+}
+
+.text {
+  @apply text-sm text-dark leading-tight;
+}
+
+.numberContainer {
+  @apply absolute top-6 right-0 flex justify-center items-center px-7 overflow-hidden;
+}
+
+.number {
+  @apply text-[19rem] text-grey opacity-30 leading-none;
+}

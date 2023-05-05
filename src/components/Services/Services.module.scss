@@ -1,0 +1,8 @@
+.container {
+  @apply bg-dark border border-dark;
+}
+
+.content {
+  @apply grid grid-cols-2 gap-[0.063rem];
+  grid-auto-rows: 1fr;
+}
