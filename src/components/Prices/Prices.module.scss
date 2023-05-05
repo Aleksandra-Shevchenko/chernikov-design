@@ -1,0 +1,8 @@
+.container {
+  @apply bg-general p-9;
+}
+
+.content {
+  @apply grid grid-cols-1 gap-9;
+  grid-auto-rows: 1fr;
+}

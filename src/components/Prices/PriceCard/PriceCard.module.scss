@@ -1,0 +1,20 @@
+.container {
+  @apply bg-grey rounded-3xl p-5;
+}
+
+.titleBox {
+  @apply flex justify-between items-center mb-9;
+}
+
+.title {
+  @apply font-bold text-sm text-light;
+  @apply subpixel-antialiased;
+}
+
+.price {
+  @apply text-lg text-light;
+}
+
+.text {
+  @apply text-light text-xs;
+}
