@@ -1,12 +1,12 @@
 import React from 'react';
 // import { Routes, Route, Router } from 'react-router-dom';
 import './App.css';
-import { Header } from '../Header/Header';
-import { ProjectList } from '../ProjectList/ProjectList';
-import { AboutMe } from '../AboutMe/AboutMe';
-import { Services } from '../Services/Services';
-import { Prices } from '../Prices/Prices';
-import { Footer } from '../Footer/Footer';
+import { Header } from './Header/Header';
+// import { ProjectList } from './ProjectList/ProjectList';
+import { AboutMe } from './AboutMe/AboutMe';
+import { Services } from './Services/Services';
+import { Prices } from './Prices/Prices';
+import { Footer } from './Footer/Footer';
 
 // const { XMLParser } = require('fast-xml-parser');
 
@@ -16,21 +16,21 @@ import { Footer } from '../Footer/Footer';
 //   return jObj;
 // };
 
-const mockList = [
-  {
-    description: 'Super project',
-    name: 'Kirzhach',
-    id: 'kirzhach',
-    heroImage: 'https://storage.yandexcloud.net/test-sh/kirzhach/007%201.png',
-  },
-  {
-    description: 'Super project',
-    name: 'Duderhof club',
-    id: 'duderhof club',
-    heroImage:
-      'https://storage.yandexcloud.net/test-sh/duderhof%20club/001%201.png',
-  },
-];
+// const mockList = [
+//   {
+//     description: 'Super project',
+//     name: 'Kirzhach',
+//     id: 'kirzhach',
+//     heroImage: 'https://storage.yandexcloud.net/test-sh/kirzhach/007%201.png',
+//   },
+//   {
+//     description: 'Super project',
+//     name: 'Duderhof club',
+//     id: 'duderhof club',
+//     heroImage:
+//       'https://storage.yandexcloud.net/test-sh/duderhof%20club/001%201.png',
+//   },
+// ];
 
 function App() {
   // const [projectList, setProjectList] = useState();
@@ -92,12 +92,14 @@ function App() {
 
   return (
     <div className="template">
-      <div className="max-w-7xl w-full">
+      <div className="max-w-7xl w-full min-h-screen">
         <Header />
-        <ProjectList projects={mockList} />
-        <AboutMe />
-        <Services />
-        <Prices />
+        <section>
+          {/* <ProjectList projects={mockList} /> */}
+          <AboutMe />
+          <Services />
+          <Prices />
+        </section>
         <Footer />
 
         {/* <p>
