@@ -17,7 +17,9 @@ export const ServiceCard = ({
       <h2 className={styles.title}>{service.title}</h2>
       <ul>
         {service.list.map((item) => (
-          <li className={styles.text}>&ndash;{` ${item}`}</li>
+          <li className={styles.text} key={item}>
+            &ndash;{` ${item}`}
+          </li>
         ))}
       </ul>
     </div>

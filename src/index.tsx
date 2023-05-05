@@ -5,9 +5,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './components/App/App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import './fontawesome';
-
-// import './fontawesome';
 
 const router = createBrowserRouter([
   {

@@ -1,9 +1,10 @@
 export const OWNER = {
   logo: 'Chernikov Design',
   phoneNumber: '+7 (911) 242 86 25',
-  email: 'chenikovdesign@mail.ru',
-  telegramUrl: 'https://t.me/Chernikov_design',
-  whatsappUrl: 'https://wa.me/79112428625',
+  email: 'chernikovdesign@mail.ru',
+  telegram: 'https://t.me/Chernikov_design',
+  whatsapp: 'https://wa.me/79112428625',
+  instagram: 'https://www.instagram.com',
   mainDescription: `- Я Павел Черников, автор проектов, в основе которых лежит лаконичное пространство, 
   где каждый элемент интерьера несет в себе функциональность и комфорт.`,
   description: `Реализуем проекты под ключ: проектируем,

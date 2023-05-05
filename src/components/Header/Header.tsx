@@ -1,37 +1,27 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { OWNER } from '../../utils/constants';
+import { fixPhoneNumber } from '../../utils/common';
 
 import styles from './Header.module.scss';
 import { Logo } from '../Logo/Logo';
+import { MessengerIcon } from '../Icons/MessengerIcon';
 
 export const Header = () => {
   console.log('header');
+
   return (
     <header className={styles.container}>
       <Logo />
       <div className={styles.contactsBox}>
-        <p className={styles.tel}>{OWNER.phoneNumber}</p>
         <a
-          href={OWNER.telegramUrl}
-          target="_blank"
-          rel="noreferrer"
-          className={styles.linkBox}
+          className={styles.tel}
+          href={`tel:${fixPhoneNumber(OWNER.phoneNumber)}`}
         >
-          <FontAwesomeIcon
-            icon={['fab', 'telegram-plane']}
-            className="text-lg"
-          />
+          {OWNER.phoneNumber}
         </a>
-        <a
-          href={OWNER.whatsappUrl}
-          target="_blank"
-          rel="noreferrer"
-          className={styles.linkBox}
-        >
-          <FontAwesomeIcon icon={['fab', 'whatsapp']} className="text-lg" />
-        </a>
+        <MessengerIcon type="telegram" />
+        <MessengerIcon type="whatsapp" />
       </div>
     </header>
   );

@@ -18,7 +18,7 @@ export const PriceCard = ({
     </div>
     <ul className="list-disc list-insid">
       {price.list.map((item) => (
-        <li className={styles.text}>{`${item}`}</li>
+        <li className={styles.text} key={item}>{`${item}`}</li>
       ))}
     </ul>
   </li>
