@@ -18,16 +18,16 @@
   }
 
   .bottomContainer {
-    @apply flex justify-between items-center;
+    @apply flex justify-between items-center flex-col xs:flex-row;
   }
 
   .navList {
-    @apply flex space-x-7 xs:space-x-6;
+    @apply flex space-x-6 order-1 xs:order-none;
   }
 }
 
 .logo {
-  @apply text-xxs xs:text-xs md:text-sm;
+  @apply text-xxs xs:text-xs md:text-sm mt-6 xs:mt-0 order-2 xs:order-none;
 }
 
 .text {
