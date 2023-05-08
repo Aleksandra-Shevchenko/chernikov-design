@@ -5,6 +5,9 @@ import {
   faTelegramPlane,
   faWhatsapp,
   faInstagram,
+  faBehance,
+  faYoutube,
+  faVk,
 } from '@fortawesome/free-brands-svg-icons';
 
 import { OWNER } from '../../utils/constants';
@@ -15,6 +18,9 @@ const ICONS = {
   telegram: faTelegramPlane,
   whatsapp: faWhatsapp,
   instagram: faInstagram,
+  behance: faBehance,
+  youtube: faYoutube,
+  vk: faVk,
 };
 
 export const MessengerIcon = ({
