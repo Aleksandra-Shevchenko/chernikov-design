@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/chernikov-design/static/css/main.44a0452f.css",
+    "main.js": "/chernikov-design/static/js/main.d27d05c0.js",
+    "static/js/787.4d4fa4ce.chunk.js": "/chernikov-design/static/js/787.4d4fa4ce.chunk.js",
+    "static/media/avatar@3x.jpg": "/chernikov-design/static/media/avatar@3x.d3511a9f3da4bb1b9b2e.jpg",
+    "static/media/avatar.jpg": "/chernikov-design/static/media/avatar.dda5297ee6a950a3a40d.jpg",
+    "static/media/Steppe.otf": "/chernikov-design/static/media/Steppe.2b2dcbbf591f92ce1674.otf",
+    "static/media/Steppe.woff2": "/chernikov-design/static/media/Steppe.6302dc8354b14ea7f093.woff2",
+    "index.html": "/chernikov-design/index.html",
+    "main.44a0452f.css.map": "/chernikov-design/static/css/main.44a0452f.css.map",
+    "main.d27d05c0.js.map": "/chernikov-design/static/js/main.d27d05c0.js.map",
+    "787.4d4fa4ce.chunk.js.map": "/chernikov-design/static/js/787.4d4fa4ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.44a0452f.css",
+    "static/js/main.d27d05c0.js"
+  ]
+}

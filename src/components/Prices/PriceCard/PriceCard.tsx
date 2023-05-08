@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './PriceCard.module.scss';
+import styles from './PriceCard.module.css';
 
 export const PriceCard = ({
   price,

@@ -12,7 +12,7 @@ import {
 
 import { OWNER } from '../../utils/constants';
 
-import styles from './MessengerIcons.module.scss';
+import styles from './MessengerIcons.module.css';
 
 const ICONS = {
   telegram: faTelegramPlane,

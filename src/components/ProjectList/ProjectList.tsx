@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 
-import styles from './ProjectList.module.scss';
+import styles from './ProjectList.module.css';
 
 export const ProjectList = ({ projects }: { projects: any }) => {
   console.log('projects', projects);

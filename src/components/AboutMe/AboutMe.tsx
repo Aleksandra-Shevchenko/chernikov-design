@@ -4,7 +4,7 @@ import avatar from '../../images/avatar/avatar.jpg';
 import avatarLage from '../../images/avatar/avatar@3x.jpg';
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
 
-import styles from './AboutMe.module.scss';
+import styles from './AboutMe.module.css';
 
 export const AboutMe = () => {
   const config = useAppConfigContext();

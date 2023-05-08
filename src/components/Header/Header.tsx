@@ -2,7 +2,7 @@ import React from 'react';
 
 import { fixPhoneNumber } from '../../utils/common';
 
-import styles from './Header.module.scss';
+import styles from './Header.module.css';
 import { Logo } from '../Logo/Logo';
 import { MessengerIcon } from '../Icons/MessengerIcon';
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';

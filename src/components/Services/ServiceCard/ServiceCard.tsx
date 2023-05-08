@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './ServiceCard.module.scss';
+import styles from './ServiceCard.module.css';
 
 export const ServiceCard = ({
   service,
