@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
 
-import styles from './Services.module.scss';
+import styles from './Services.module.css';
 import { ServiceCard } from './ServiceCard/ServiceCard';
 
 export const Services = () => {

@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import { OWNER } from '../../utils/constants';
 
-import styles from './Logo.module.scss';
+import styles from './Logo.module.css';
 
 export const Logo = ({ className }: { className?: string }) => (
   <a href="/" className={clsx(styles.logo, className)}>

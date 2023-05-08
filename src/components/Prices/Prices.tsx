@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
 
-import styles from './Prices.module.scss';
+import styles from './Prices.module.css';
 import { PriceCard } from './PriceCard/PriceCard';
 
 export const Prices = () => {

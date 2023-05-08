@@ -5,7 +5,7 @@ import { Logo } from '../Logo/Logo';
 import { MessengerIcon } from '../Icons/MessengerIcon';
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
 
-import styles from './Footer.module.scss';
+import styles from './Footer.module.css';
 
 export const Footer = () => {
   const config = useAppConfigContext();
