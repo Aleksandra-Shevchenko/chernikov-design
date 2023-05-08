@@ -1,5 +1,11 @@
 module.exports = {
-  extends: ['airbnb', 'plugin:@typescript-eslint/recommended', 'prettier'],
+  extends: [
+    'airbnb',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'plugin:import/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   root: true,
   env: {
@@ -9,7 +15,7 @@ module.exports = {
     'jest/globals': true,
     jasmine: true,
   },
-  plugins: ['react', '@typescript-eslint', 'jest'],
+  plugins: ['react', '@typescript-eslint', 'jest', 'react-hooks'],
   rules: {
     'import/no-unresolved': 'off', // Otherwise we can't do relative imports
     'import/extensions': 'off', // Let's not change every single import to use file extensions just yet
@@ -54,5 +60,12 @@ module.exports = {
     useJSXTextNode: true,
     project: './tsconfig.eslint.json',
     tsconfigRootDir: __dirname,
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
   },
 };

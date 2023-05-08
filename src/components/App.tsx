@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 // import { Routes, Route, Router } from 'react-router-dom';
+
+import { AppConfigContext } from '../contexts/AppConfigContext';
 import './App.css';
 import { Header } from './Header/Header';
-// import { ProjectList } from './ProjectList/ProjectList';
+import { ProjectList } from './ProjectList/ProjectList';
 import { AboutMe } from './AboutMe/AboutMe';
 import { Services } from './Services/Services';
 import { Prices } from './Prices/Prices';
@@ -16,23 +18,26 @@ import { Footer } from './Footer/Footer';
 //   return jObj;
 // };
 
-// const mockList = [
-//   {
-//     description: 'Super project',
-//     name: 'Kirzhach',
-//     id: 'kirzhach',
-//     heroImage: 'https://storage.yandexcloud.net/test-sh/kirzhach/007%201.png',
-//   },
-//   {
-//     description: 'Super project',
-//     name: 'Duderhof club',
-//     id: 'duderhof club',
-//     heroImage:
-//       'https://storage.yandexcloud.net/test-sh/duderhof%20club/001%201.png',
-//   },
-// ];
+const mockList = [
+  {
+    description: 'Super project',
+    name: 'Kirzhach',
+    id: 'kirzhach',
+    heroImage: 'https://storage.yandexcloud.net/test-sh/kirzhach/007%201.png',
+  },
+  {
+    description: 'Super project',
+    name: 'Duderhof club',
+    id: 'duderhof club',
+    heroImage:
+      'https://storage.yandexcloud.net/test-sh/duderhof%20club/001%201.png',
+  },
+];
 
 function App() {
+  const [config, setConfig] = useState(null);
+  const [loading, setLoading] = useState(false);
+
   // const [projectList, setProjectList] = useState();
   // const [projectContent, setProjectContent] = useState();
   // const [projectDecription] = useState({
@@ -90,37 +95,47 @@ function App() {
   // console.log('projectList', projectList);
   // console.log('projectContent', projectContent);
 
-  return (
-    <div className="template">
-      <div className="max-w-7xl w-full min-h-screen">
-        <Header />
-        <section>
-          {/* <ProjectList projects={mockList} /> */}
-          <AboutMe />
-          <Services />
-          <Prices />
-        </section>
-        <Footer />
+  useEffect(() => {
+    if (!config) {
+      setLoading(true);
+      fetch('https://storage.yandexcloud.net/test-sh/config.json')
+        .then((res) => res.json())
+        .then((response) => {
+          setConfig(response);
+        })
+        .catch((err) => console.log('err', err))
+        .finally(() => setLoading(false));
 
-        {/* <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <img
-          src="https://storage.yandexcloud.net/test-sh/project/Screenshot at Mar 29 09-17-04.png"
-          className="w-48"
-          alt="test"
-        />
-        <p className="text-black">{projectDecription?.name}</p> */}
+      console.log(loading);
+    }
+  }, []);
+
+  return (
+    <AppConfigContext.Provider value={config}>
+      <div className="template">
+        <div className="max-w-7xl w-full min-h-screen">
+          {config && (
+            <>
+              <Header />
+              <section>
+                <ProjectList projects={mockList} />
+                <AboutMe />
+                <Services />
+                <Prices />
+              </section>
+              <Footer />
+            </>
+          )}
+          {/* 
+            <img
+              src="https://storage.yandexcloud.net/test-sh/project/Screenshot at Mar 29 09-17-04.png"
+              className="w-48"
+              alt="test"
+            />
+            <p className="text-black">{projectDecription?.name}</p> */}
+        </div>
       </div>
-    </div>
+    </AppConfigContext.Provider>
   );
 }
 
