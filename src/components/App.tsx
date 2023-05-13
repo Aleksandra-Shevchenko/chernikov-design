@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 // import { Routes, Route, Router } from 'react-router-dom';
 
 import { AppConfigContext } from '../contexts/AppConfigContext';
@@ -9,6 +9,7 @@ import { AboutMe } from './AboutMe/AboutMe';
 import { Services } from './Services/Services';
 import { Prices } from './Prices/Prices';
 import { Footer } from './Footer/Footer';
+import { useDimensions } from '../hooks/useDimensions';
 
 // const { XMLParser } = require('fast-xml-parser');
 
@@ -31,6 +32,13 @@ const mockList = [
     id: 'duderhof club',
     heroImage:
       'https://storage.yandexcloud.net/test-sh/duderhof%20club/001%201.png',
+  },
+  {
+    id: 'the one',
+    name: 'the one',
+    description: 'Super project',
+    heroImage:
+      'https://storage.yandexcloud.net/test-sh/the%20one/002_Photoshop%201.jpg',
   },
 ];
 
@@ -110,14 +118,22 @@ function App() {
     }
   }, []);
 
+  const headerRef = useRef<HTMLElement | null>(null);
+  const { height: headerHeight } = useDimensions(headerRef, config);
+
+  const heightCalc = useMemo(
+    () => ({ paddingTop: `${headerHeight}px` }),
+    [headerHeight],
+  );
+
   return (
     <AppConfigContext.Provider value={config}>
       <div className="template">
-        <div className="max-w-7xl w-full min-h-screen">
+        <div className="max-w-7xl w-full min-h-screen relative">
           {config && (
             <>
-              <Header />
-              <section>
+              <Header ref={headerRef} />
+              <section style={heightCalc}>
                 <ProjectList projects={mockList} />
                 <AboutMe />
                 <Services />
@@ -126,13 +142,6 @@ function App() {
               <Footer />
             </>
           )}
-          {/* 
-            <img
-              src="https://storage.yandexcloud.net/test-sh/project/Screenshot at Mar 29 09-17-04.png"
-              className="w-48"
-              alt="test"
-            />
-            <p className="text-black">{projectDecription?.name}</p> */}
         </div>
       </div>
     </AppConfigContext.Provider>
