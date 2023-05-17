@@ -1,10 +1,12 @@
 import React from 'react';
 import clsx from 'clsx';
 
+import { useAppConfigContext } from '../../hooks/useAppConfigContext';
+
 import styles from './ProjectList.module.css';
 
-export const ProjectList = ({ projects }: { projects: any }) => {
-  console.log('projects', projects);
+export const ProjectList = () => {
+  const { projects } = useAppConfigContext();
 
   return (
     <nav className="min-h-max">

@@ -19,29 +19,6 @@ import { useDimensions } from '../hooks/useDimensions';
 //   return jObj;
 // };
 
-const mockList = [
-  {
-    description: 'Super project',
-    name: 'Kirzhach',
-    id: 'kirzhach',
-    heroImage: 'https://storage.yandexcloud.net/test-sh/kirzhach/007%201.png',
-  },
-  {
-    description: 'Super project',
-    name: 'Duderhof club',
-    id: 'duderhof club',
-    heroImage:
-      'https://storage.yandexcloud.net/test-sh/duderhof%20club/001%201.png',
-  },
-  {
-    id: 'the one',
-    name: 'the one',
-    description: 'Super project',
-    heroImage:
-      'https://storage.yandexcloud.net/test-sh/the%20one/002_Photoshop%201.jpg',
-  },
-];
-
 function App() {
   const [config, setConfig] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -106,7 +83,11 @@ function App() {
   useEffect(() => {
     if (!config) {
       setLoading(true);
-      fetch('https://storage.yandexcloud.net/test-sh/config.json')
+      fetch('https://storage.yandexcloud.net/test-sh/config.json', {
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      })
         .then((res) => res.json())
         .then((response) => {
           setConfig(response);
@@ -134,7 +115,7 @@ function App() {
             <>
               <Header ref={headerRef} />
               <section style={heightCalc}>
-                <ProjectList projects={mockList} />
+                <ProjectList />
                 <AboutMe />
                 <Services />
                 <Prices />
