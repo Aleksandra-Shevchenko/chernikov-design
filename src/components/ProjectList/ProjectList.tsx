@@ -1,5 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
 
@@ -24,6 +25,7 @@ export const ProjectList = () => {
             <h2 className="uppercase text-xxlg font-bold text-general font-steppe">
               {project.name}
             </h2>
+            <Link to={`/project/${project.id}`}> show </Link>
             {/* <img
               className="h-full w-full aspect-auto"
               src={project.heroImage}

@@ -1,4 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 // import { Routes, Route, Router } from 'react-router-dom';
 
 import { AppConfigContext } from '../contexts/AppConfigContext';
@@ -10,6 +12,7 @@ import { Services } from './Services/Services';
 import { Prices } from './Prices/Prices';
 import { Footer } from './Footer/Footer';
 import { useDimensions } from '../hooks/useDimensions';
+import { Project } from './Project/Project';
 
 // const { XMLParser } = require('fast-xml-parser');
 
@@ -102,27 +105,39 @@ function App() {
   const headerRef = useRef<HTMLElement | null>(null);
   const { height: headerHeight } = useDimensions(headerRef, config);
 
-  const heightCalc = useMemo(
+  const paddingCalc = useMemo(
     () => ({ paddingTop: `${headerHeight}px` }),
     [headerHeight],
   );
+
+  if (!config) {
+    return <p>Loading</p>;
+  }
 
   return (
     <AppConfigContext.Provider value={config}>
       <div className="template">
         <div className="max-w-7xl w-full min-h-screen relative">
-          {config && (
-            <>
-              <Header ref={headerRef} />
-              <section style={heightCalc}>
-                <ProjectList />
-                <AboutMe />
-                <Services />
-                <Prices />
-              </section>
-              <Footer />
-            </>
-          )}
+          <Header ref={headerRef} />
+
+          <section style={paddingCalc} className="min-h-screen">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <ProjectList />
+                    <AboutMe />
+                    <Services />
+                    <Prices />
+                  </>
+                }
+              />
+              <Route path="/project/:projectId" element={<Project />} />
+            </Routes>
+          </section>
+
+          <Footer />
         </div>
       </div>
     </AppConfigContext.Provider>
