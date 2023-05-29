@@ -1,4 +1,60 @@
+.list {
+  @apply grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3 h-full;
+}
+
 .card {
   height: calc(100vh - 6.25rem);
-  @apply overflow-hidden bg-cover flex justify-center items-center bg-center;
+  @apply flex flex-1 relative;
+  @apply max-h-[37.5rem] transition-all;
+}
+
+.link {
+  @apply h-full w-full flex flex-1 relative;
+  @apply overflow-hidden bg-cover flex bg-center flex-1;
+}
+
+.link:hover .title {
+  background-position: 0%;
+}
+
+.link:hover .title::before {
+  @apply w-full;
+}
+
+.link:hover .imageBox {
+  @apply brightness-75 transition-['brightness'] scale-125;
+  @apply duration-700;
+}
+
+.titleContainer {
+  @apply h-full w-full flex items-center justify-center flex-1 z-10;
+}
+
+.title {
+  @apply uppercase text-xxlg font-bold text-general font-steppe duration-1000 mx-5;
+  @apply text-center z-10 relative bg-clip-text bg-[length:200%_100%];
+  background-position: -100%;
+  transition: all 0.5s ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    var(--color-light),
+    var(--color-light) 50%,
+    var(--color-general) 50%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.title::before {
+  @apply absolute block w-0 h-[3px] -bottom-[3px] left-0 z-0 bg-light;
+  content: '';
+  transition: all 0.5s ease-in-out;
+}
+
+.imageBox {
+  @apply absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex flex-1 duration-700;
+}
+
+.image {
+  @apply h-full w-full object-cover;
 }

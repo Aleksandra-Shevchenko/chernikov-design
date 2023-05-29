@@ -8,6 +8,7 @@ body {
   font-family: 'Steppe', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  @apply bg-general;
 }
 
 @layer components {
@@ -17,5 +18,12 @@ body {
 
   .sections-frame {
     @apply px-8 py-7 xl:px-10 xl:py-8;
+  }
+}
+
+@layer base {
+  :root {
+    --color-light: #f8f8f8;
+    --color-general: #2c2c2c;
   }
 }

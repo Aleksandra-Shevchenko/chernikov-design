@@ -1,39 +1,75 @@
-import React from 'react';
-import clsx from 'clsx';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
+import { useDimensions } from '../../hooks/useDimensions';
 
 import styles from './ProjectList.module.css';
 
 export const ProjectList = () => {
   const { projects } = useAppConfigContext();
+  const { windowWidth } = useDimensions();
+
+  const [defaultNum, setDefaultNum] = useState(0);
+  const [showed, setShowed] = useState(defaultNum);
+
+  const scollToRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (windowWidth >= 1024) {
+      setDefaultNum(3);
+    } else if (windowWidth < 640) {
+      setDefaultNum(1);
+    } else {
+      setDefaultNum(2);
+    }
+  }, [windowWidth]);
+
+  useEffect(() => {
+    setShowed(defaultNum);
+  }, [defaultNum]);
+
+  const handleShowMore = () => {
+    if (showed < projects.length) {
+      setShowed((prevVal) => prevVal + defaultNum);
+      scollToRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <nav className="min-h-max">
-      <ul className=" grid grid-cols-1 gap-0 sm:grid-cols-2 h-full">
-        {projects.map((project: any) => (
-          <li
-            key={project.id}
-            // className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
-            className={clsx(
-              styles.card,
-              // `bg-[url(https://storage.yandexcloud.net/test-sh/kirzhach/007%201.png)]`
-            )}
-            style={{ backgroundImage: `url(${project.heroImage})` }}
-          >
-            <h2 className="uppercase text-xxlg font-bold text-general font-steppe">
-              {project.name}
-            </h2>
-            <Link to={`/project/${project.id}`}> show </Link>
-            {/* <img
-              className="h-full w-full aspect-auto"
-              src={project.heroImage}
-              alt=""
-            /> */}
-          </li>
-        ))}
+    <nav className="max-h-max">
+      <ul className={styles.list}>
+        {projects.map((project, index) => {
+          if (index + 1 <= showed) {
+            return (
+              <li key={project.id} className={styles.card}>
+                <Link to={`/project/${project.id}`} className={styles.link}>
+                  <div className={styles.imageBox}>
+                    <img
+                      className="h-full w-full object-cover"
+                      src={project.heroImage}
+                      alt=""
+                    />
+                  </div>
+                  <div className={styles.titleContainer}>
+                    <h2 className={styles.title}>{project.name}</h2>
+                  </div>
+                </Link>
+                <div
+                  className="absolute bottom-[80px]"
+                  ref={index + 1 === showed ? scollToRef : undefined}
+                />
+              </li>
+            );
+          }
+          return undefined;
+        })}
       </ul>
+      {showed < projects.length && (
+        <button type="button" onClick={handleShowMore}>
+          Показать еще
+        </button>
+      )}
     </nav>
   );
 };

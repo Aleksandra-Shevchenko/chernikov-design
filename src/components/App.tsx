@@ -26,12 +26,6 @@ function App() {
   const [config, setConfig] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // const [projectList, setProjectList] = useState();
-  // const [projectContent, setProjectContent] = useState();
-  // const [projectDecription] = useState({
-  //   name: '',
-  // });
-
   // &delimiter=/
   // const b = () => {
   //   fetch('https://storage.yandexcloud.net/test-sh?list-type=2&delimiter=/', {
@@ -66,22 +60,6 @@ function App() {
   //     })
   //     .catch((err) => console.log('err', err));
   // };
-
-  // const d = () => {
-  //   fetch('https://storage.yandexcloud.net/test-sh/document.json')
-  //     .then((res) => {
-  //       return res.json();
-  //     })
-  //     .then((response) => {
-  //       console.log('response', response);
-  //       console.log('document', response);
-  //       setProjectDecription(response);
-  //     })
-  //     .catch((err) => console.log('err', err));
-  // };
-
-  // console.log('projectList', projectList);
-  // console.log('projectContent', projectContent);
 
   useEffect(() => {
     if (!config) {
