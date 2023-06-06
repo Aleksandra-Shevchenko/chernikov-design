@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
@@ -6,12 +6,17 @@ import { useDimensions } from '../../hooks/useDimensions';
 
 import styles from './ProjectList.module.css';
 
-export const ProjectList = () => {
+export const ProjectList = ({ headerHeight }: { headerHeight: number }) => {
   const { projects } = useAppConfigContext();
   const { windowWidth } = useDimensions();
 
   const [defaultNum, setDefaultNum] = useState(0);
   const [showed, setShowed] = useState(defaultNum);
+
+  const sortedProjects = useMemo(
+    () => projects.sort((a, b) => +a.num - +b.num),
+    [projects],
+  );
 
   const scollToRef = useRef<HTMLDivElement | null>(null);
 
@@ -39,7 +44,7 @@ export const ProjectList = () => {
   return (
     <nav className="max-h-max">
       <ul className={styles.list}>
-        {projects.map((project, index) => {
+        {sortedProjects.map((project, index) => {
           if (index + 1 <= showed) {
             return (
               <li key={project.id} className={styles.card}>
@@ -57,6 +62,7 @@ export const ProjectList = () => {
                 </Link>
                 <div
                   className="absolute bottom-[80px]"
+                  style={{ bottom: `${headerHeight}px` }}
                   ref={index + 1 === showed ? scollToRef : undefined}
                 />
               </li>
@@ -67,7 +73,7 @@ export const ProjectList = () => {
       </ul>
       {showed < projects.length && (
         <button type="button" onClick={handleShowMore}>
-          Показать еще
+          Загрузить еще
         </button>
       )}
     </nav>

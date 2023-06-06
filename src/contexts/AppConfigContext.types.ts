@@ -14,6 +14,7 @@ type ProjectType = {
   description?: string;
   id: string;
   heroImage: string;
+  num: string;
 };
 
 export interface AppConfigContextType {

@@ -9,7 +9,7 @@
 }
 
 .link {
-  @apply h-full w-full flex flex-1 relative;
+  @apply h-full w-full flex relative;
   @apply overflow-hidden bg-cover flex bg-center flex-1;
 }
 
@@ -27,11 +27,11 @@
 }
 
 .titleContainer {
-  @apply h-full w-full flex items-center justify-center flex-1 z-10;
+  @apply h-full w-full flex items-center justify-center flex-col flex-1 z-10;
 }
 
 .title {
-  @apply uppercase text-xxlg font-bold text-general font-steppe duration-1000 mx-5;
+  @apply uppercase text-xxlg font-bold text-general font-steppe duration-1000 mx-4 w-fit;
   @apply text-center z-10 relative bg-clip-text bg-[length:200%_100%];
   background-position: -100%;
   transition: all 0.5s ease-in-out;

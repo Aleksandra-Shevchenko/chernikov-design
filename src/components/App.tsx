@@ -104,7 +104,7 @@ function App() {
                 path="/"
                 element={
                   <>
-                    <ProjectList />
+                    <ProjectList headerHeight={headerHeight} />
                     <AboutMe />
                     <Services />
                     <Prices />
