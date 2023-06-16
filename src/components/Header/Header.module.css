@@ -1,5 +1,5 @@
 .container {
-  @apply bg-general text-white py-4 px-5 xs:px-6 xs:py-6 lg:py-7 md:px-9 fixed left-0 right-0 top-0 flex z-10 justify-center;
+  @apply bg-general text-white py-4 px-5 xs:px-6 xs:py-5  md:px-9 fixed left-0 right-0 top-0 flex z-50 justify-center;
 }
 
 .content {

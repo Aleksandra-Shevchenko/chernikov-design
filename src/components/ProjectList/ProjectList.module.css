@@ -1,3 +1,7 @@
+.container {
+  @apply max-h-max min-h-[66vh] flex flex-col relative;
+}
+
 .list {
   @apply grid grid-cols-1 gap-0 sm:grid-cols-2 lg:grid-cols-3 h-full;
 }
@@ -5,7 +9,7 @@
 .card {
   height: calc(100vh - 6.25rem);
   @apply flex flex-1 relative;
-  @apply max-h-[37.5rem] transition-all;
+  @apply xs:max-h-[44rem] sm:max-h-[37.5rem] transition-all;
 }
 
 .link {
@@ -57,4 +61,40 @@
 
 .image {
   @apply h-full w-full object-cover;
+}
+
+.button {
+  @apply p-3 pr-12 relative w-max mx-auto;
+}
+
+.buttonText {
+  @apply text-light text-center text-xs lg:text-sm relative;
+}
+
+.arrow {
+  @apply absolute left-[94%];
+}
+
+.arrow:before {
+  @apply absolute;
+}
+
+.arrow {
+  @apply w-4 h-4 lg:w-5 lg:h-5 -mt-5 mr-0 mb-0 -ml-5 rotate-45;
+  @apply border-l-0 border-t-0 border-r-[1.8px] border-r-light border-b-[1.8px] border-b-light;
+  @apply top-[60%] lg:top-[56%];
+}
+
+.arrow:before {
+  @apply w-2 h-2 lg:w-3 lg:h-3 top-[50%] mr-0 mb-0 -ml-1 -mt-1 lg:-ml-1.5 lg:-mt-1.5;
+  @apply border-l-0 border-t-0 border-r-[1px] border-r-light  border-b-[1px] border-b-light;
+  content: '';
+}
+
+.animation {
+  @apply before:animate-[arrow_2s_ease-in-out_infinite];
+}
+
+.arrowUp {
+  @apply rotate-[-135deg] top-[80%] lg:top-[76%] left-[94%];
 }

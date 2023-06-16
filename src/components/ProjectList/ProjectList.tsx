@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import clsx from 'clsx';
 
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
 import { useDimensions } from '../../hooks/useDimensions';
@@ -19,6 +20,7 @@ export const ProjectList = ({ headerHeight }: { headerHeight: number }) => {
   );
 
   const scollToRef = useRef<HTMLDivElement | null>(null);
+  const scollToTop = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (windowWidth >= 1024) {
@@ -37,12 +39,30 @@ export const ProjectList = ({ headerHeight }: { headerHeight: number }) => {
   const handleShowMore = () => {
     if (showed < projects.length) {
       setShowed((prevVal) => prevVal + defaultNum);
-      scollToRef.current?.scrollIntoView({ behavior: 'smooth' });
+      scollToRef.current?.scrollIntoView({
+        behavior: 'smooth',
+      });
     }
   };
 
+  const handleHide = () => {
+    scollToTop.current?.scrollIntoView({ behavior: 'smooth' });
+    const delay =
+      (scollToTop.current?.clientHeight || 600) /
+        Math.ceil(projects.length / defaultNum) -
+      60;
+    requestAnimationFrame(() =>
+      setTimeout(() => setShowed(defaultNum), Math.round(delay)),
+    );
+  };
+
   return (
-    <nav className="max-h-max">
+    <nav className={styles.container}>
+      <div
+        className="absolute -top-[80px] bottom-0"
+        ref={scollToTop}
+        style={{ top: `-${headerHeight}px` }}
+      />
       <ul className={styles.list}>
         {sortedProjects.map((project, index) => {
           if (index + 1 <= showed) {
@@ -72,8 +92,19 @@ export const ProjectList = ({ headerHeight }: { headerHeight: number }) => {
         })}
       </ul>
       {showed < projects.length && (
-        <button type="button" onClick={handleShowMore}>
-          Загрузить еще
+        <button
+          type="button"
+          onClick={handleShowMore}
+          className={styles.button}
+        >
+          <span className={styles.buttonText}>Загрузить еще</span>
+          <div className={clsx(styles.arrow, styles.animation)} />
+        </button>
+      )}
+      {showed >= projects.length && (
+        <button type="button" onClick={handleHide} className={styles.button}>
+          <span className={styles.buttonText}>Свернуть</span>
+          <div className={clsx(styles.arrow, styles.arrowUp)} />
         </button>
       )}
     </nav>
