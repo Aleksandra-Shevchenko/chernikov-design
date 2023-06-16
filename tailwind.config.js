@@ -30,7 +30,19 @@ module.exports = {
     fontFamily: {
       steppe: ['Steppe', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      keyframes: {
+        arrow: {
+          '0%': {
+            opacity: 1,
+          },
+          '100%': {
+            opacity: 0,
+            transform: 'translate(-5px, -5px)',
+          },
+        },
+      },
+    },
   },
   plugins: [],
 };

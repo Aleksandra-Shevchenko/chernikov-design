@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
+import { OWNER } from '../../utils/constants';
 import { useAppConfigContext } from '../../hooks/useAppConfigContext';
 import { useDimensions } from '../../hooks/useDimensions';
 
@@ -13,6 +14,8 @@ export const ProjectList = ({ headerHeight }: { headerHeight: number }) => {
 
   const [defaultNum, setDefaultNum] = useState(0);
   const [showed, setShowed] = useState(defaultNum);
+
+  const emptyItemsNum = showed - projects.length;
 
   const sortedProjects = useMemo(
     () => projects.sort((a, b) => +a.num - +b.num),
@@ -73,7 +76,7 @@ export const ProjectList = ({ headerHeight }: { headerHeight: number }) => {
                     <img
                       className="h-full w-full object-cover"
                       src={project.heroImage}
-                      alt=""
+                      alt={project.name}
                     />
                   </div>
                   <div className={styles.titleContainer}>
@@ -90,6 +93,27 @@ export const ProjectList = ({ headerHeight }: { headerHeight: number }) => {
           }
           return undefined;
         })}
+        {emptyItemsNum >= 1 && (
+          <li key="yourProject" className={styles.card}>
+            <div className={styles.link}>
+              <div className={styles.textContainer}>
+                <h2 className={styles.text}>
+                  Тут может быть проект вашей квартиры
+                </h2>
+                <a
+                  className={styles.contactButton}
+                  href={OWNER.telegram}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className={styles.contactButtonText}>
+                    Начать сотрудничество
+                  </span>
+                </a>
+              </div>
+            </div>
+          </li>
+        )}
       </ul>
       {showed < projects.length && (
         <button

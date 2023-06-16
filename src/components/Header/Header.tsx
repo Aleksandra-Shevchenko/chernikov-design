@@ -15,7 +15,7 @@ export const Header = forwardRef(
     return (
       <header className={styles.container} ref={ref}>
         <div className={styles.content}>
-          <Logo className=" text-xs xs:text-sm md:text-lg" />
+          <Logo className="text-xs xs:text-sm md:text-lg" />
           <div className={styles.contactsBox}>
             <a
               className={styles.tel}

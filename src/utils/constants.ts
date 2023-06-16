@@ -4,8 +4,11 @@ export const OWNER = {
   email: 'chernikovdesign@mail.ru',
   telegram: 'https://t.me/Chernikov_design',
   whatsapp: 'https://wa.me/79112428625',
-  instagram: 'https://www.instagram.com',
-  mainDescription: `- Я Павел Черников, автор проектов, в основе которых лежит лаконичное пространство, 
+  instagram: 'https://www.instagram.com/chernikov_design/',
+  behance: 'https://www.behance.net/pavelchernikovdesign',
+  youtube: 'https://www.youtube.com/channel/UCnARQcLGP9lve6-DO7GqwGQ',
+  vk: 'https://vk.com/chernikov_design',
+  aboutMe: `- Я Павел Черников, автор проектов, в основе которых лежит лаконичное пространство, 
   где каждый элемент интерьера несет в себе функциональность и комфорт.`,
   description: `Реализуем проекты под ключ: проектируем,
   строим, полностью комплектуем объекты.
@@ -67,6 +70,31 @@ export const OWNER = {
       title: 'Нет подходящей услуги',
       price: 'Напишите нам, обсудим вашу задачу',
       list: [],
+    },
+  ],
+  projects: [
+    {
+      name: 'duderhof club',
+      description: 'Super project',
+      id: 'duderhof club',
+      heroImage:
+        'https://storage.yandexcloud.net/test-sh/duderhof%20club/001%201.png',
+    },
+    {
+      id: 'kirzhach',
+      name: 'kirzhach',
+      description: 'Super project',
+      heroImage: 'https://storage.yandexcloud.net/test-sh/kirzhach/007%201.png',
+    },
+    {
+      id: 'the one',
+      name: 'the one',
+      description: 'Super project',
+    },
+    {
+      id: 'one trinity place',
+      name: 'one trinity place',
+      description: 'Super project',
     },
   ],
 };
