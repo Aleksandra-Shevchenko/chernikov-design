@@ -1,0 +1,27 @@
+.gridContainer {
+  @apply grid h-full grid-cols-6 auto-rows-auto;
+}
+
+.image {
+  @apply h-full w-full aspect-auto object-cover object-center;
+}
+
+.heroContainer {
+  @apply grid grid-cols-2 gap-x-20 px-20 mb-20;
+}
+
+.textContainer {
+  @apply flex flex-col justify-center items-center;
+}
+
+.title {
+  @apply font-bold uppercase text-lg text-light;
+}
+
+.text {
+  @apply text-light opacity-50 text-sm;
+}
+
+.description {
+  @apply mt-3 text-xs;
+}

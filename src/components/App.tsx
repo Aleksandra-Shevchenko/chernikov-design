@@ -3,16 +3,18 @@ import { Route, Routes } from 'react-router-dom';
 
 import { AppConfigContext } from '../contexts/AppConfigContext';
 import './App.css';
+import { useDimensions } from '../hooks/useDimensions';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 import { Header } from './Header/Header';
 import { ProjectList } from './ProjectList/ProjectList';
 import { AboutMe } from './AboutMe/AboutMe';
 import { Services } from './Services/Services';
 import { Prices } from './Prices/Prices';
 import { Footer } from './Footer/Footer';
-import { useDimensions } from '../hooks/useDimensions';
 import { Project } from './Project/Project';
 
 function App() {
+  useScrollToTop();
   const [config, setConfig] = useState(null);
   const [loading, setLoading] = useState(false);
 

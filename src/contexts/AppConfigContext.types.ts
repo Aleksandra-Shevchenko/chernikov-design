@@ -11,10 +11,12 @@ type PriceType = {
 
 type ProjectType = {
   name: string;
-  description?: string;
   id: string;
   heroImage: string;
   num: string;
+  year?: string;
+  location?: string;
+  description?: string;
 };
 
 export interface AppConfigContextType {
